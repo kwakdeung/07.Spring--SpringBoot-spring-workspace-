@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="web/src/BlockProj/src/main/java"/>
+	<classpathentry kind="src" path="web/src/BlockProj/src/test/java"/>
+	<classpathentry kind="lib" path="web/src/BlockProj/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="web/src/BlockProj/libs/ojdbc6.jar"/>
+	<classpathentry kind="output" path="web/src/BlockProj/bin/main"/>
+</classpath>

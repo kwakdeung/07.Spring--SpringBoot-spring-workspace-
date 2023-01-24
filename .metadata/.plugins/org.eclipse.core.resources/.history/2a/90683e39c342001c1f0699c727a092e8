@@ -1,0 +1,17 @@
+package com.study.springboot;
+
+
+public class ContentValidator implements Validator {
+
+	@Override
+	public boolean supports(Class<?> arg0) {
+		return ContentDto.class.isAssignableFrom(arg0); // 검증힐 객체의 클래스 타입 정보
+	}
+	
+	@Override
+	public void validate(Object obj, Errors errors) {
+		
+		ContentDto dto = (ContentDto)obj;
+	}
+
+}

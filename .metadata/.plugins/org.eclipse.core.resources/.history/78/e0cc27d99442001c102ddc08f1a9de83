@@ -1,0 +1,14 @@
+package com.study.springboot.bean;
+
+import org.springframework.context.annotation.Configuration;
+
+// 클래스를 스프링 설정으로 사용함을 의미
+@Configuration
+public class Config {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

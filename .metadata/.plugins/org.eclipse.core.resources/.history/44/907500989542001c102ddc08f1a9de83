@@ -1,0 +1,12 @@
+package com.study.springboot;
+
+
+//@SpringBootApplication
+public class Ex02BeanApplication {
+
+	public static void main(String[] args) {
+		// SpringApplication.run(Ex02BeanApplication.class, args);
+
+	}
+
+}

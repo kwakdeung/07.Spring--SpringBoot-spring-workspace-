@@ -1,0 +1,31 @@
+package com.study.spring.command;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.ui.Model;
+
+import com.study.spring.dao.ContentDao;
+import com.study.spring.dto.ContentDto;
+
+
+
+public class BListCommand implements BCommand {
+	
+	@Override    
+	public void execute(HttpServletRequest request, Model model) 
+	{
+		
+		ContentDao dao = new ContentDao();
+		ArrayList<ContentDto> dtos = dao.listDao();
+		request.setAttribute("listDao", dtos);
+		// element.setAttribute( '속성' , '값' ); - 속성을 추가한다(HTML표준X 포함)
+		
+	}
+
+}

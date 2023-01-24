@@ -1,0 +1,9 @@
+package com.study.springboot;
+
+@Data
+public class ContentValidator {
+	private int id;
+	private String writer;
+	private String content;
+
+}

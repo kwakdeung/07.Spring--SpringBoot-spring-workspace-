@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.spring.dao.IDao">
+	<select id="listDao" resultType="com.study.spring.dto.ContentDto">
+		SELECT * FROM MVC_BOARD ORDER BY BGROUP DESC, BSTEP ASC
+	</select>
+	
+	<select id="content_view" resultType="com.study.spring.dto.ContentDto">
+        SELECT * FROM MVC_BOARD WHERE bId = #{param1}
+    </select>
+    
+    <select id="modify_view" resultType="com.study.spring.dto.ContentDto">
+        SELECT * FROM MVC_BOARD WHERE bId = #{param1}
+    </select>
+	
+	<update id="modify">
+		UPDATE MVC_BOARD set bName = #{param1}, bTitle = #{param2}, bContent = #{param3} WHERE bId = #{param4}
+	</update>
+	
+	<select id="write_view" resultType="com.study.spring.dto.ContentDto">
+        SELECT * FROM MVC_BOARD WHERE BID = #{param1}
+    </select>
+    
+    <insert id="write" parameterType="java.util.HashMap">
+		INSERT INTO MVC_BOARD (BID, BNAME, BTITLE, BCONTENT, BHIT, BGROUP, BSTEP, BINDENT) 
+		VALUES (MVC_BOARD_SEQ.NEXTVAL, #{param2}, #{param3}, #{param4}, 0, MVC_BOARD_SEQ.CURRVAL, 0, 0 )
+	</insert>
+	
+	<select id="viewDao" resultType="com.study.spring.dto.ContentDto">
+		SELECT * FROM MVC_BOARD WHERE BID = #{0}
+	</select>
+	
+	<delete id="deleteDao">
+		DELETE FROM MVC_BOARD WHERE BID = #{_id}
+	</delete>
+	
+	<select id="reply_view" resultType="com.study.spring.dto.ContentDto">
+        SELECT * FROM MVC_BOARD WHERE BID = #{param1}
+    </select>
+	
+	<insert id="reply" parameterType="java.util.HashMap">
+		INSERT INTO MVC_BOARD (BID, BNAME, BTITLE, BCONTENT, BGROUP, BSTEP, BINDENT) VALUES (MVC_BOARD_SEQ.NEXTVAL, #{param2}, #{param3}, #{param4}, #{param5}, #{param6}, #{param7})
+	</insert>
+	
+	<update id="replyShape" >
+        UPDATE MVC_BOARD set bStep = bStep + 1 where bGroup = #{param1} and bStep > #{param2}
+    </update>
+	
+	<select id="articleCount" resultType="_int">
+		SELECT count(*) FROM MVC_BOARD
+	</select>
+	
+	<update id="upHit">
+        UPDATE MVC_BOARD SET bHit = bHit + 1 WHERE bId = #{param1}
+    </update>
+
+
+</mapper>

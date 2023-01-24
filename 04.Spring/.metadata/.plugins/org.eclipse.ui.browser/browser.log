@@ -1,0 +1,7 @@
+
+11월 09, 2021 21:31:29.52 NEW SESSION
+11월 09, 2021 21:31:29.52 [14828:15944:1109/213129.049:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+11월 09, 2021 21:31:29.54 [14828:15944:1109/213129.050:ERROR:chrome_browser_main_extra_parts_metrics.cc(233)] crbug.com/1216328: Checking Bluetooth availability ended.
+11월 09, 2021 21:31:29.54 [14828:15944:1109/213129.050:ERROR:chrome_browser_main_extra_parts_metrics.cc(236)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+11월 09, 2021 21:31:29.57 [14828:15944:1109/213129.056:ERROR:chrome_browser_main_extra_parts_metrics.cc(240)] crbug.com/1216328: Checking default browser status ended.
+11월 09, 2021 21:31:29.60 [14828:16324:1109/213129.060:ERROR:device_event_log_impl.cc(214)] [21:31:29.059] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)

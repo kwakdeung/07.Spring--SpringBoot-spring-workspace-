@@ -1,0 +1,25 @@
+package com.study.springboot;
+
+import org.springframework.context.ApplicationContext;
+
+//@SpringBootApplication
+public class Ex02BeanApplication {
+
+	public static void main(String[] args) {
+		// SpringApplication.run(Ex02BeanApplication.class, args);
+		
+		// 1. IoC 컨테이너 생성
+		ApplicationContext context =
+				new AnnotationConfigApplicationContext(Config.class);
+		
+		// 2. Member Bean 가져오기
+		Member member1 = (Member)context.getBean("member1");
+		member1.print();
+		
+		// 3. Member Bean 가져오기
+				Member member1 = (Member)context.getBean("member1");
+				member1.print();
+
+	}
+
+}

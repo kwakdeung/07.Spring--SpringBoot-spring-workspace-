@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.spring.dao.IDao">
+	<select id="listDao" resultType="com.study.spring.dto.ContentDto">
+		SELECT * FROM MVC_BOARD ORDER BY BGROUP DESC, BSTEP ASC
+	</select>
+	
+	<select id="content_view" resultType="com.study.spring.dto.ContentDto">
+        SELECT * FROM mvc_board WHERE bId = #{param1}
+    </select>
+    
+    <select id="modify_view" resultType="com.study.spring.dto.ContentDto">
+        SELECT * FROM mvc_board WHERE bId = #{param1}
+    </select>
+	
+	<update id="modify">
+		UPDATE mvc_board set bName = #{param1}, bTitle = #{param2}, bContent = #{param3} WHERE bId = #{param4}
+	</update>
+	
+	<insert id="writeDao" parameterType="java.util.HashMap">
+		INSERT INTO MVC_BOARD (BID, BNAME, BTITLE, BCONTENT, BHIT, BGRUOP, BSTEP, BINDENT) 
+		VALUES (MVC_BOARD_SEQ.NEXTVAL, ?, ?, ?, 0, MVC_BOARD_SEQ.CURRVAL, 0, 0 )
+	</insert>
+	
+	<select id="viewDao" resultType="com.study.spring.dto.ContentDto">
+		SELECT * FROM MVC_BOARD WHERE BID = #{0}
+	</select>
+	
+	<delete id="deleteDao">
+		DELETE FROM MVC_BOARD WHERE BID = #{_id}
+	</delete>
+	
+	<select id="reply_view" resultType="com.study.spring.dto.ContentDto">
+        SELECT * FROM mvc_board WHERE bId = #{param1}
+    </select>
+	
+	<insert id="reply">
+		insert into board "
+					+ "(bId, bName, bTitle, bContent, bGroup, bStep, bIndent) "
+					+ "values (mvc_board_seq.nextval, ?, ?, ?, ?, ?, ?)";
+	</insert>
+	
+	
+	<select id="articleCount" resultType="_int">
+		SELECT count(*) FROM MVC_BOARD
+	</select>
+	
+	<update id="upHit">
+        UPDATE mvc_board SET bHit = bHit + 1 WHERE bId = #{param1}
+    </update>
+
+
+</mapper>
